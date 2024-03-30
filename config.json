@@ -5,8 +5,8 @@
     "2FASecret": "",
     "i_user": "",
     "proxy": null,
-    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36",
-    "intervalGetNewCookie": 1440,
+    "userAgent": "Mozilla/5.0 (Linux; Mozilla/5.0 (Linux; Android 9; SM-G973U Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36",
+    "intervalGetNewCookie": 14400000000000000,
     "notes": "time the system automatically retrieves new cookies from email/password, unit is minute, if you set null, the system will not automatically retrieve new cookies, it saves you from having to manually change your cookie every time it expires. recommended set to 1440 (1day) or 4320 (3day).TO BE ABLE TO USE THIS FEATURE YOU NEED TO ENTER THE ACCOUNT PASSWORD ABOVE"
   },
   "antiInbox": false,
@@ -19,8 +19,9 @@
   "adminBot": [
     "100039963912352",
     "100007522154224",
-    "100094625382039",
-    "100023599695829"
+    "100023599695829",
+    "100051114632405",
+    "100082791661103"
   ],
   "whiteListMode": {
     "enable": false,
@@ -28,7 +29,7 @@
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
   "nickNameBot": "😈𝗕𝗢𝗧 𝗡𝗘𝗚𝗥𝗘𝗗.😈",
-  "prefix": "#",
+  "prefix": ",",
   "database": {
     "type": "sqlite",
     "uriMongodb": "",
@@ -53,25 +54,25 @@
   "dashBoard": {
     "enable": true,
     "expireVerifyCode": 300000,
-    "port": 3001
+    "port": 1988
   },
   "serverUptime": {
     "enable": false,
-    "port": 3001,
+    "port": 1988,
     "socket": {
       "enable": true,
       "channelName": "uptime",
-      "verifyToken": ""
+      "verifyToken": "5d00018a-89fa-4848-9d9a-84904cce5a03"
     }
   },
   "autoRestart": {
-    "time": null,
+    "time": false,
     "notes": "you can set time is interval with milisecond or cron time, example: 1000, 10000, 60000, 3600000, 86400000, 0 0 * * *,... docs: https://www.npmjs.com/package/node-cron. If you set time is 0 or false or null, the bot will not auto restart"
   },
   "autoUptime": {
     "enable": false,
     "timeInterval": 180,
-    "url": "",
+    "url": "https://jezzxyz-goatbot-v2.glitch.me",
     "notes": "the value of timeInterval is seconds, url is the url you want to send the request to (automatically detected for hosting glitch or replit)"
   },
   "autoLoadScripts": {
@@ -80,11 +81,11 @@
     "ignoreEvents": "",
     "notes": "this feature will automatically load the script when scripts have been changed, you can set ignoreCmds to ignore commands, ignoreEvents to ignore events, separate by comma or space, example: \"cmd1.js cmd2.js cmd3.js\" (without backslash)"
   },
-  "autoRefreshFbstate": true,
+  "autoRefreshFbstate": false,
   "autoReloginWhenChangeAccount": false,
   "autoRestartWhenListenMqttError": false,
   "restartListenMqtt": {
-    "enable": true,
+    "enable": false,
     "timeRestart": 3600000,
     "delayAfterStopListening": 2000,
     "logNoti": true,
@@ -99,8 +100,8 @@
     },
     "telegram": {
       "enable": false,
-      "botToken": "",
-      "chatId": "",
+      "botToken": "6923396960:AAGVerVkeGpwogRpq_hRZi8odLIijGwzA1Y",
+      "chatId": "5181019555",
       "note": "Can send notifications to many chatId, separate by comma or space, example: \"123456789 987654321\" (without backslash)"
     },
     "discordHook": {
@@ -110,7 +111,7 @@
     }
   },
   "hideNotiMessage": {
-    "commandNotFound": false,
+    "commandNotFound": true,
     "adminOnly": false,
     "threadBanned": false,
     "userBanned": false,
@@ -140,5 +141,11 @@
     "autoMarkDelivery": false,
     "autoReconnect": false,
     "notes": "Document here: https://github.com/ntkhang03/fb-chat-api/blob/master/DOCS.md#apisetoptionsoptions "
+  },
+  "whiteListModeThread": {
+    "enable": false,
+    "whiteListThreadIds": [],
+    "notes": "if you enable this feature, only the thread in the whiteListThreadIds list can use the bot",
+    "how_it_work": "if you enable both whiteListMode and whiteListModeThread, the system will check if the user is in whiteListIds, then check if the thread is in whiteListThreadIds, if one of the conditions is true, the user can use the bot"
   }
 }
